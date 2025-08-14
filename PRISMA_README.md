@@ -28,8 +28,28 @@ Database operations are handled through DAO files:
 
 ## Environment Variables
 
-The database connection is configured through the `DATABASE_URL` environment variable in the `.env` file.
+The database connection is configured through environment variables in the `.env` file. The project uses Supabase connection pooling for optimal performance:
+
+- `DATABASE_URL_LOCAL` - Database connection string for local development
+- `DATABASE_URL` - Supabase connection pool URL for application queries (port 6543 with pgbouncer=true)
+- `DIRECT_URL` - Direct connection to Supabase for migrations (port 5432)
 
 For authentication, you also need:
 - `NEXTAUTH_SECRET` - A secret key for NextAuth.js
 - `NEXTAUTH_URL` - The URL of your application (e.g., http://localhost:3000)
+
+### Environment Switching
+
+The application automatically switches between local and production databases based on the `NODE_ENV` environment variable:
+- When `NODE_ENV` is set to `production`, the application uses `DATABASE_URL` (Supabase connection pool)
+- When `NODE_ENV` is set to `development` or `test`, the application uses `DATABASE_URL_LOCAL`
+
+To deploy to production, make sure to set `NODE_ENV=production` in your production environment.
+
+### Supabase Connection Pooling
+
+This project uses Supabase's connection pooling for better performance and scalability:
+- `DATABASE_URL` uses port 6543 with `pgbouncer=true` for application queries
+- `DIRECT_URL` uses port 5432 for direct database connections (used by Prisma migrations)
+
+This setup ensures optimal performance in production while maintaining compatibility with Prisma's migration system.

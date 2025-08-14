@@ -4,10 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
+    "dev:local": "cross-env NODE_ENV=development next dev --turbopack",
+    "dev:prod": "cross-env NODE_ENV=production next dev --turbopack",
     "build": "next build",
+    "build:prod": "cross-env NODE_ENV=production next build",
     "start": "next start",
     "lint": "next lint"
-  },
+},
   "dependencies": {
     "@aws-sdk/client-sqs": "^3.864.0",
     "@prisma/client": "^6.14.0",
@@ -26,9 +29,11 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "cross-env": "^10.0.0",
     "eslint": "^9",
     "eslint-config-next": "15.4.6",
     "tailwindcss": "^4",
+    "ts-node": "^10.9.2",
     "typescript": "^5"
   }
 }
