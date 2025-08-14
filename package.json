@@ -10,7 +10,8 @@
     "build:prod": "cross-env NODE_ENV=production next build",
     "build:no-lint": "next build --no-lint",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@aws-sdk/client-sqs": "^3.864.0",
