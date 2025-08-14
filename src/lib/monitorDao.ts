@@ -57,6 +57,33 @@ export async function updateMonitorStatus(
   })
 }
 
+// Update a monitor
+export async function updateMonitor(
+  monitorId: string,
+  monitorData: {
+    name?: string
+    type?: MonitorType
+    target?: string
+    intervalSeconds?: number
+    status?: MonitorStatus
+    lastCheckedAt?: Date
+  }
+): Promise<Monitor> {
+  return await db.monitor.update({
+    where: {
+      id: monitorId,
+    },
+    data: {
+      name: monitorData.name,
+      type: monitorData.type,
+      target: monitorData.target,
+      interval_seconds: monitorData.intervalSeconds,
+      status: monitorData.status,
+      last_checked_at: monitorData.lastCheckedAt,
+    },
+  })
+}
+
 // Delete a monitor
 export async function deleteMonitor(monitorId: string): Promise<Monitor> {
   return await db.monitor.delete({
