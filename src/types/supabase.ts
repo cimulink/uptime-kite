@@ -11,40 +11,11 @@ export type Json =
 
 export type Database = {
   public: {
-    Tables: {
-      // Define your tables here
-      // Example:
-      // users: {
-      //   Row: {
-      //     id: number
-      //     name: string
-      //     email: string
-      //   }
-      //   Insert: {
-      //     id?: number
-      //     name: string
-      //     email: string
-      //   }
-      //   Update: {
-      //     id?: number
-      //     name?: string
-      //     email?: string
-      //   }
-      //   Relationships: []
-      // }
-    }
-    Views: {
-      // Define your views here
-    }
-    Functions: {
-      // Define your functions here
-    }
-    Enums: {
-      // Define your enums here
-    }
-    CompositeTypes: {
-      // Define your composite types here
-    }
+    Tables: Record<string, never>;
+    Views: Record<string, never>;
+    Functions: Record<string, never>;
+    Enums: Record<string, never>;
+    CompositeTypes: Record<string, never>;
   }
 }
 

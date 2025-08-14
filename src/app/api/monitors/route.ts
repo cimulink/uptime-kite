@@ -5,7 +5,7 @@ import { MonitorType } from '@prisma/client'
 import { authOptions } from '@/lib/authConfig'
 
 // GET /api/monitors - Get all monitors for the authenticated user
-export async function GET(req: NextRequest) {
+export async function GET() {
   try {
     const session = await getServerSession(authOptions)
     

@@ -3,8 +3,7 @@ import { getServerSession } from 'next-auth/next'
 import { authOptions } from '@/lib/authConfig'
 import { 
   getMonitorById, 
-  updateMonitor, 
-  updateMonitorStatus,
+  updateMonitor,
   deleteMonitor 
 } from '@/lib/monitorDao'
 import { MonitorStatus, MonitorType } from '@prisma/client'
