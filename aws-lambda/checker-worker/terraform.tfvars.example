@@ -1,0 +1,7 @@
+# Example Terraform variables file for UptimeKite Checker Worker
+# Copy this file to terraform.tfvars and fill in the values
+
+aws_region     = "ap-south-1"
+project_name   = "uptimekite"
+database_url   = "postgresql://username:password@hostname:port/database"
+sqs_queue_url  = "https://sqs.ap-south-1.amazonaws.com/account-id/queue-name"

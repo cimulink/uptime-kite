@@ -1,0 +1,23 @@
+{
+  "name": "uptimekite-checker-worker",
+  "version": "1.0.0",
+  "description": "AWS Lambda function to check monitor endpoints and update results",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["aws", "lambda", "uptime", "monitoring"],
+  "author": "UptimeKite",
+  "license": "MIT",
+  "dependencies": {
+    "@aws-sdk/client-sqs": "^3.609.0",
+    "@prisma/client": "^5.18.0",
+    "pg": "^8.12.0"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.143",
+    "@types/node": "^20.14.12",
+    "prisma": "^5.18.0",
+    "typescript": "^5.5.3"
+  }
+}
